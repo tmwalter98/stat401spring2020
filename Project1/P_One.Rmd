@@ -86,4 +86,62 @@ barplot(dpois(x=0:20, 50, log=FALSE))
 # Problem 1.4
 # The more lambda increases, the more skewed it is the the left.
 ```
+```{r}
+library(matrixStats) # Import library to use colStats
+# Problem 2
+p <- matrix(c(2,0.3,4,0.35,6,0.25,10,0.1),ncol=4)
+# Created a matrix to store the values, and to access them easier
+
+# Problem 2.1
+mu <- 0
+
+for (c in 1:ncol(p)) # Iterate through the columns (x)
+    mu <- (mu + (p[1,c]*p[2,c])) # Multiply them with the corresponding p(x) and add it to previous mu
+
+print(mu)
+
+# Problem 2.2
+std <- 0
+
+for (c in 1:ncol(p)) # Used the standard deviation equation of sqrt(((x-mu)^2)*p(x))
+  std <- (std + ((p[1,c]-mu)^2)*p[2,c])
+
+print(sqrt(std))
+
+# Problem 2.3 & 2.4a
+r2 <- replicate(8000, rnorm(2)) # Used replicate to simulate 8000 trials of size n
+r6 <- replicate(8000, rnorm(6))
+r12 <- replicate(8000, rnorm(12))
+r20 <- replicate(8000, rnorm(20))
+r100 <- replicate(8000, rnorm(100))
+r150 <- replicate(8000, rnorm(150))
+
+# Problem 2.4b
+mu2 <- colMeans(r2) # Used colMeans to compute the Means of the trials
+mu6 <- colMeans(r6)
+mu12 <- colMeans(r12)
+mu20 <- colMeans(r20)
+mu100 <- colMeans(r100)
+mu150 <- colMeans(r150)
+
+std2 <- colSds(r2) # Did a similar process for the Standard Deviations
+std6 <- colSds(r6)
+std12 <- colSds(r12)
+std20 <- colSds(r20)
+std100 <- colSds(r100)
+std150 <- colSds(r150)
+
+# Problem 2.4c
+hist(r2) # Graphed a histogram of the trials that were replicated
+hist(r6)
+hist(r12)
+hist(r20)
+hist(r100)
+hist(r150)
+
+# Problem 2.4e
+# The increase of the sample size causes the sample mean to become smaller and the distribution seems to get a little wider.
+# The increasing replicates made the approximation more accurate because there was more data, which can be backed by using the CLT.
+```
+
 
