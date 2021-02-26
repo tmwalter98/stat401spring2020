@@ -1,0 +1,89 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+# Problem 1.1
+# dbinom gives the density of a function of a binomial probability
+# pbinom gives the probability distribution of a function of a binomial probability
+# barplot plots bar graphs
+
+# Problem 1.2a
+n <-5
+p <- 0.1
+barplot(dbinom(x=0:n, size=n, prob=p)) #(5, 0.1)
+
+n <- 10
+p <- 0.1
+barplot(dbinom(x=0:n, size=n, prob=p)) #(10, 0.1)
+
+n <- 20
+p <- 0.1
+barplot(dbinom(x=0:n, size=n, prob=p)) #(20, 0.1)
+
+n <- 30
+p <- 0.1
+barplot(dbinom(x=0:n, size=n, prob=p)) #(30, 0.1)
+
+n <- 50
+p <- 0.1
+barplot(dbinom(x=0:n, size=n, prob=p)) #(50, 0.1)
+
+# Problem 1.2b
+n <- 5
+p <- 0.6
+barplot(dbinom(x=0:n, size=n, prob=p)) #(5, 0.6)
+
+n <- 10
+p <- 0.6
+barplot(dbinom(x=0:n, size=n, prob=p)) #(10, 0.6)
+
+n <- 15
+p <- 0.6
+barplot(dbinom(x=0:n, size=n, prob=p)) #(15, 0.6)
+
+n <- 30
+p <- 0.6
+barplot(dbinom(x=0:n, size=n, prob=p)) #(30, 0.6)
+
+# Problem 1.2c
+n <- 5
+p <- 0.9
+barplot(dbinom(x=0:n, size=n, prob=p)) #(5, 0.9)
+
+n <- 10
+p <- 0.9
+barplot(dbinom(x=0:n, size=n, prob=p)) #(10, 0.9)
+
+n <- 20
+p <- 0.9
+barplot(dbinom(x=0:n, size=n, prob=p)) #(20, 0.9)
+
+n <- 30
+p <- 0.9
+barplot(dbinom(x=0:n, size=n, prob=p)) #(30, 0.9)
+
+n <- 50
+p <- 0.9
+barplot(dbinom(x=0:n, size=n, prob=p)) #(50, 0.9)
+
+# Problem 1.3
+# Used n=20, as there was no given n
+barplot(dpois(x=0:20, 2, log=FALSE)) # Created Poisson Barplots for each different lambda
+
+barplot(dpois(x=0:20, 4, log=FALSE))
+
+barplot(dpois(x=0:20, 5, log=FALSE))
+
+barplot(dpois(x=0:20, 10, log=FALSE))
+
+barplot(dpois(x=0:20, 20, log=FALSE))
+
+barplot(dpois(x=0:20, 30, log=FALSE))
+
+barplot(dpois(x=0:20, 50, log=FALSE))
+
+# Problem 1.4
+# The more lambda increases, the more skewed it is the the left.
+```
+
