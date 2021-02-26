@@ -143,5 +143,132 @@ hist(r150)
 # The increase of the sample size causes the sample mean to become smaller and the distribution seems to get a little wider.
 # The increasing replicates made the approximation more accurate because there was more data, which can be backed by using the CLT.
 ```
+```{r}
+library(matrixStats) # Import library to use colStats
+
+# Problem 3.1
+r5 <- replicate(10000, rnorm(5, mean=10, sd=2))
+print(mean(colMeans(r5))) # Getting average Mean of experiments for overall Mean of all the simulations
+print(mean(colSds(r5))) # Getting average Std of experiments for overall Std of all the simulations
+
+r10 <- replicate(10000, rnorm(10, mean=10, sd=2)) # Repeat for the rest of the different n values
+print(mean(colMeans(r10)))
+print(mean(colSds(r10)))
+
+r15 <- replicate(10000, rnorm(15, mean=10, sd=2))
+print(mean(colMeans(r15)))
+print(mean(colSds(r15)))
+
+r25 <- replicate(10000, rnorm(25, mean=10, sd=2))
+print(mean(colMeans(r25)))
+print(mean(colSds(r25)))
+
+r30 <- replicate(10000, rnorm(30, mean=10, sd=2))
+print(mean(colMeans(r30)))
+print(mean(colSds(r30)))
+
+r50 <- replicate(10000, rnorm(50, mean=10, sd=2))
+print(mean(colMeans(r50)))
+print(mean(colSds(r50)))
+
+r100 <- replicate(10000, rnorm(100, mean=10, sd=2))
+print(mean(colMeans(r100)))
+print(mean(colSds(r100)))
+
+# The higher the number of random samples gets, the closer the Mean and standard Deviation are to the population Mean and Standard Deviation, which we know is 10 and 2 respectively.
+
+# Problem 3.2
+r5 <- replicate(10000, rexp(5,2))
+print(mean(colMeans(r5))) # Getting average Mean of experiments
+print(mean(colSds(r5))) # Getting average Std of experiments
+
+r10 <- replicate(10000, rexp(10,2)) # Repeat for the different parameters
+print(mean(colMeans(r10)))
+print(mean(colSds(r10)))
+
+r15 <- replicate(10000, rexp(15,2))
+print(mean(colMeans(r15)))
+print(mean(colSds(r15)))
+
+r25 <- replicate(10000, rexp(25,2))
+print(mean(colMeans(r25)))
+print(mean(colSds(r25)))
+
+r30 <- replicate(10000, rexp(30,2))
+print(mean(colMeans(r30)))
+print(mean(colSds(r30)))
+
+r50 <- replicate(10000, rexp(50,2))
+print(mean(colMeans(r50)))
+print(mean(colSds(r50)))
+
+r100 <- replicate(10000, rexp(100,2))
+print(mean(colMeans(r100)))
+print(mean(colSds(r100)))
+
+# As the sample size increases, the Mean and Standard Deviation of an exponential distribution get closer to what the population Mean and Standard Deviation is, which we know of as (1/lambda) or 0.5 in this example.
+
+# Problem 3.3
+r5 <- replicate(10000, rgamma(5,2,3))
+print(mean(colMeans(r5))) # Getting average Mean of experiments
+print(mean(colSds(r5))) # Getting average Std of experiments
+
+r10 <- replicate(10000, rgamma(10,2,3)) # Repeat for different sample sizes
+print(mean(colMeans(r10)))
+print(mean(colSds(r10)))
+
+r15 <- replicate(10000, rgamma(15,2,3))
+print(mean(colMeans(r15)))
+print(mean(colSds(r15)))
+
+r25 <- replicate(10000, rgamma(25,2,3))
+print(mean(colMeans(r25)))
+print(mean(colSds(r25)))
+
+r30 <- replicate(10000, rgamma(30,2,3))
+print(mean(colMeans(r30)))
+print(mean(colSds(r30)))
+
+r50 <- replicate(10000, rgamma(50,2,3))
+print(mean(colMeans(r50)))
+print(mean(colSds(r50)))
+
+r100 <- replicate(10000, rgamma(100,2,3))
+print(mean(colMeans(r100)))
+print(mean(colSds(r100)))
+
+# As the sample size increases, the Mean and Standard Deviation of a Gamma Distribution gets closer to the population's Mean and Standard Deviation, which in this case is calculated as (2/3) and (sqrt(2/9)) for Mean and Standard Deviation respectively.
+
+# Problem 3.4
+r5 <- replicate(10000, rchisq(5,5))
+print(mean(colMeans(r5))) # Getting average Mean of experiments
+print(mean(colSds(r5))) # Getting average Std of experiments
+
+r10 <- replicate(10000, rchisq(10,5)) # Repeat for the different sample sizes
+print(mean(colMeans(r10)))
+print(mean(colSds(r10)))
+
+r15 <- replicate(10000, rchisq(15,5))
+print(mean(colMeans(r15)))
+print(mean(colSds(r15)))
+
+r25 <- replicate(10000, rchisq(25,5))
+print(mean(colMeans(r25)))
+print(mean(colSds(r25)))
+
+r30 <- replicate(10000, rchisq(30,5))
+print(mean(colMeans(r30)))
+print(mean(colSds(r30)))
+
+r50 <- replicate(10000, rchisq(50,5))
+print(mean(colMeans(r50)))
+print(mean(colSds(r50)))
+
+r100 <- replicate(10000, rchisq(100,5))
+print(mean(colMeans(r100)))
+print(mean(colSds(r100)))
+
+# As the sample size increases, the Mean and Standard Deviation of a Chi-Squared distribution gets closer to the population's Mean and Standard Deviation, which in this case should be 5 and sqrt(10) respectively.
+```
 
 
